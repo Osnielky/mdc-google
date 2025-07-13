@@ -25,16 +25,11 @@ const SearchBar: React.FC<Props> = ({ onSearch }) => {
           style={styles.searchInput}
           required
         />
-        <input
-          type="number"
-          value={pages}
-          min={1}
-          max={500}
-          onChange={(e) => setPages(Number(e.target.value))}
-          style={styles.pageInput}
-          title="Max pages to crawl"
-        />
-        <button type="submit" style={styles.button}>
+        <button
+          type="submit"
+          style={styles.button}
+          onClick={() => alert('Searching... not implemented yet')}
+        >
           🔍 Search
         </button>
       </div>
