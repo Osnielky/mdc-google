@@ -1,26 +1,27 @@
 import React, { useState } from 'react';
+import { getRandomLinks} from '../Util';
 
 interface Props {
   onSearch: (url: string, pages: number) => void;
 }
 
 const SearchBar: React.FC<Props> = ({ onSearch }) => {
-  const [url, setUrl] = useState('');
+  const [search, setSearch] = useState('');
   const [pages, setPages] = useState(100);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!url) return;
-    onSearch(url.trim(), pages);
+    if (!search) return;
+    onSearch(search.trim(), pages);
   };
 
   return (
     <form onSubmit={handleSubmit} style={styles.form}>
       <div style={styles.inputContainer}>
-        <input type='text' placeholder='Search URL...' value={url} onChange={(e) => setUrl(e.target.value)} style={styles.searchInput} required />
-      
+        <input type='text' placeholder='Search URL...' value={search} onChange={(e) => setSearch(e.target.value)} style={styles.searchInput} required />
+
         <button
-          type="button"
+          type='button'
           style={{
             ...styles.button,
             backgroundColor: '#4285F4',
@@ -28,13 +29,11 @@ const SearchBar: React.FC<Props> = ({ onSearch }) => {
             border: 'none',
           }}
           onClick={() => {
-          alert('Set the number of pages to crawl (default is 100).');
-          }}
-        >
+            console.log(`Searching mdc.edu...  <<${search}>>`);
+            console.log(getRandomLinks(50));
+          }}>
           🔍 Search
         </button>
-
-        
       </div>
     </form>
   );
