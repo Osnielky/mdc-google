@@ -17,21 +17,24 @@ const SearchBar: React.FC<Props> = ({ onSearch }) => {
   return (
     <form onSubmit={handleSubmit} style={styles.form}>
       <div style={styles.inputContainer}>
-        <input
-          type="text"
-          placeholder="Search URL..."
-          value={url}
-          onChange={(e) => setUrl(e.target.value)}
-          style={styles.searchInput}
-          required
-        />
+        <input type='text' placeholder='Search URL...' value={url} onChange={(e) => setUrl(e.target.value)} style={styles.searchInput} required />
+      
         <button
-          type="submit"
-          style={styles.button}
-          onClick={() => alert('Searching... not implemented yet')}
+          type="button"
+          style={{
+            ...styles.button,
+            backgroundColor: '#4285F4',
+            color: '#fff',
+            border: 'none',
+          }}
+          onClick={() => {
+          alert('Set the number of pages to crawl (default is 100).');
+          }}
         >
           🔍 Search
         </button>
+
+        
       </div>
     </form>
   );
