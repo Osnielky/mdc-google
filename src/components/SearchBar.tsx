@@ -30,7 +30,10 @@ const SearchBar: React.FC<Props> = ({ onSearch }) => {
           }}
           onClick={() => {
             console.log(`Searching mdc.edu...  <<${search}>>`);
-            console.log(getRandomLinks(50));
+            const mockResults = getRandomLinks(50);
+            console.log(mockResults);
+            // Call the onSearch prop to pass results to parent
+            onSearch(search.trim(), pages);
           }}>
           🔍 Search
         </button>
