@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getRandomLinks} from '../Util';
+
 
 interface Props {
   onSearch: (url: string, pages: number) => void;
@@ -7,7 +7,7 @@ interface Props {
 
 const SearchBar: React.FC<Props> = ({ onSearch }) => {
   const [search, setSearch] = useState('');
-  const [pages, setPages] = useState(100);
+  const [pages, setPages] = useState(50);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,10 +29,7 @@ const SearchBar: React.FC<Props> = ({ onSearch }) => {
             border: 'none',
           }}
           onClick={() => {
-            console.log(`Searching mdc.edu...  <<${search}>>`);
-            const mockResults = getRandomLinks(50);
-            console.log(mockResults);
-            // Call the onSearch prop to pass results to parent
+        
             onSearch(search.trim(), pages);
           }}>
           🔍 Search
