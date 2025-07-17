@@ -23,10 +23,10 @@ export function getRandomLinks(count: number = 20): string[] {
 export async function fetchBackendLinks(searchTerm: string = 'Financial aid'): Promise<string[]> {
   try {
     const controller = new AbortController();
-    // Increase timeout to 2 minutes for web crawling
     const timeoutId = setTimeout(() => controller.abort(), 120000);
-    debugger;
-    const response = await fetch(`https://mdc-web-crowler-cf-821639951132.us-east1.run.app?term=${encodeURIComponent(searchTerm)}`, {
+
+    // Use relative URL since you have proxy configured
+    const response = await fetch(`/?term=${encodeURIComponent(searchTerm)}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -36,7 +36,6 @@ export async function fetchBackendLinks(searchTerm: string = 'Financial aid'): P
     });
 
     clearTimeout(timeoutId);
-
     console.log('Response status:', response.status);
 
     if (!response.ok) {
@@ -46,7 +45,6 @@ export async function fetchBackendLinks(searchTerm: string = 'Financial aid'): P
     const data = await response.json();
     console.log('Response data:', data);
 
-    // Wait until we have actual results or the backend indicates completion
     if (!data.matches || data.matches.length === 0) {
       console.log('No matches found in response');
       return [];
@@ -65,4 +63,3 @@ export async function fetchBackendLinks(searchTerm: string = 'Financial aid'): P
     throw error;
   }
 }
-// "proxy": "https://mdc-web-crowler-cf-821639951132.us-east1.run.app",

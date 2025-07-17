@@ -2,6 +2,7 @@
   "name": "mdc-google",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://mdc-web-crowler-cf-821639951132.us-east1.run.app",
  
   "dependencies": {
     "@testing-library/dom": "^10.4.0",

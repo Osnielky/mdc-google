@@ -7,7 +7,6 @@ function App() {
   const [results, setResults] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  // ...existing code...
   const handleSearch = async (url: string, pages: number) => {
     console.log('handleSearch called with:', url, pages);
 
@@ -16,17 +15,18 @@ function App() {
     setIsLoading(true);
 
     try {
+      console.log('About to call fetchBackendLinks');
       const results = await fetchBackendLinks(url);
-
+      console.log('fetchBackendLinks returned:', results);
       setResults(results);
     } catch (err) {
+      console.error('Error running crawler:', err);
       // Keep results empty on error
       setResults([]);
     } finally {
       setIsLoading(false);
     }
   };
-  // ...existing code...
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', minHeight: '100vh', paddingTop: '3rem' }}>
