@@ -66,14 +66,7 @@ function App() {
           </div>
         )}
 
-        {results.length > 0 && (
-          <div style={{ marginTop: '2rem' }}>
-            <p style={{ color: '#70757a', fontSize: '14px', marginBottom: '1rem' }}>About {results.length} results</p>
-            {results.map((url, index) => (
-              <Result key={index} title={`Result ${index + 1}`} url={url} description={`Sample description for ${url}`} />
-            ))}
-          </div>
-        )}
+    
       </div>
     </div>
   );
