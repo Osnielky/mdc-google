@@ -26,7 +26,8 @@ export async function fetchBackendLinks(searchTerm: string): Promise<string[]> {
     const timeoutId = setTimeout(() => controller.abort(), 120000);
 
     // Use relative URL since you have proxy configured
-    const response = await fetch(`https://mdc-web-crowler-cf-821639951132.us-east1.run.app/?term=${encodeURIComponent(searchTerm)}`, {
+  //  const response = await fetch(`https://mdc-web-crowler-cf-821639951132.us-east1.run.app/?term=${encodeURIComponent(searchTerm)}`, {
+    const response = await fetch(`https://mdc-fake-crowler-821639951132.europe-west1.run.app`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
