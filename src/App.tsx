@@ -40,9 +40,7 @@ function App() {
             letterSpacing: '2px',
             fontFamily: 'Product Sans, Arial, sans-serif',
           }}>
-          <span role='img' aria-label='Spider' style={{ fontSize: '3rem', verticalAlign: 'middle', marginRight: '0.5rem' }}>
-            🕷️
-          </span>
+
           MDC&nbsp;
           <span style={{ color: '#4285F4' }}>G</span>
           <span style={{ color: '#EA4335' }}>o</span>
@@ -55,7 +53,7 @@ function App() {
 
         {isLoading && (
           <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-            <p>🕷️ Crawling MDC website...</p>
+            <p>Crawling MDC ...</p>
             <p style={{ fontSize: '14px', color: '#666' }}>This may take up to 2 minutes</p>
           </div>
         )}

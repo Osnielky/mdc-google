@@ -20,7 +20,7 @@ export function getRandomLinks(count: number = 20): string[] {
   return links;
 }
 
-export async function fetchBackendLinks(searchTerm: string = 'Financial aid'): Promise<string[]> {
+export async function fetchBackendLinks(searchTerm: string): Promise<string[]> {
   try {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 120000);
