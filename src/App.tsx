@@ -8,16 +8,16 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSearch = async (url: string, pages: number) => {
-    console.log('handleSearch called with:', url, pages);
+    
 
     // Clear previous results immediately when starting a new search
     setResults([]);
     setIsLoading(true);
 
     try {
-      console.log('About to call fetchBackendLinks');
+     
       const results = await fetchBackendLinks(url);
-      console.log('fetchBackendLinks returned:', results);
+     
       setResults(results);
     } catch (err) {
       console.error('Error running crawler:', err);
@@ -41,7 +41,7 @@ function App() {
             fontFamily: 'Product Sans, Arial, sans-serif',
           }}>
 
-          MDC&nbsp;
+          MDC_MDC_MDC&nbsp;
           <span style={{ color: '#4285F4' }}>G</span>
           <span style={{ color: '#EA4335' }}>o</span>
           <span style={{ color: '#FBBC05' }}>o</span>
