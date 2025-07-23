@@ -41,7 +41,7 @@ function App() {
             fontFamily: 'Product Sans, Arial, sans-serif',
           }}>
 
-          MDC_MDC_MDC&nbsp;
+          MDC-&nbsp;
           <span style={{ color: '#4285F4' }}>G</span>
           <span style={{ color: '#EA4335' }}>o</span>
           <span style={{ color: '#FBBC05' }}>o</span>
